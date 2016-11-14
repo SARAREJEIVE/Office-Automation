@@ -1,0 +1,185 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMasterPage.master.cs" Inherits="Admin_AdminMasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Welcome</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link href="icons/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+ 
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    
+</head>
+<body>
+    <style>
+.dropbtn {
+    background-color: #37a5de;
+    color: white;
+    padding: 16px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+   
+   text-align:center;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #eee;}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #37a5de;
+    color:black;
+}
+</style>
+
+    <form id="form1" runat="server">
+     <a href="index.html"></a>
+	<div class="wrapper"> 
+<header>
+			<div class="span-1 header">
+				<div class="col-sm-6">
+					          <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b> INTEGRAL MEDICAL INSTRUMENTATION</b></h3>
+				</div><!-- col-sm-6 -->
+				<div class="col-sm-6 text-right">
+					<nav>
+						<ul>
+                           <li class="dropdown"> <button class="dropbtn">Dropdown</button>
+                                <div class="dropdown-content">
+                                    <a href="#">Link 1</a>
+                                    <a href="#">Link 2</a>
+                                    <a href="#">Link 3</a>
+                                </div>
+
+                           </li>
+							<li><a href="settings.aspx">Settings</a></li>
+							<li><a href="../Guest/Login.aspx">Logout</a></li>							
+						</ul>
+					</nav>
+				</div><!-- col-sm-6 -->
+			</div><!-- span-1 -->
+		</header>	
+
+			<div class="span-1"> 
+
+				<div class="gds-sidebar">
+					<div class="left_holder"> 
+					
+						<h2>RAW MATERIAL STOCK MAINTAINANCE</h2>
+						<ul>
+                            
+							<li><a href="RawMaterial.aspx">Raw Material</a></li>
+							<li><a href="RawMaterialDetails.aspx">Purchase Details</a></li>
+                            <li><a href="stockDetails.aspx">Stock Details</a></li>
+						</ul>
+						
+						<h2>PRODUCT MANAGEMENT</h2>
+						<ul>
+							
+                            <li><a href="ProductionCategory.aspx">Production category</a></li>
+                            <li><a href="SubCategory.aspx">sub category</a></li>
+                            <li><a href="Productions.aspx">Production</a></li>
+                            <li><a href="ProductionRawMaterial.aspx">Raw Material Production</a></li>
+                            <li><a href=" ProductBooking.aspx">Product Booking</a></li>
+                             <li><a href="Product.aspx">Product</a></li>
+
+						</ul>
+						
+						<h2>SERVICE</h2>
+						<ul>
+							<li><a href="../Bill/BillForm8_items.aspx">Customer Billing</a></li>
+                            <li><a href="../Bill/BillForm8B_items.aspx">Distributers Billing</a></li>
+
+                            
+
+                            
+						</ul>		
+
+
+                        <h2>Billing</h2>
+						<ul>
+							<li><a href="IMIService.aspx">IMI Service</a></li>
+                            
+						</ul>		
+
+
+						<h2>ROCHE SERVICE</h2>
+						<ul>
+							<li><a href="../Roche Service/RocheService.aspx">Roche</a></li>
+								
+                            
+
+						
+							
+						</ul>					
+						
+					</div><!-- left_holder -->
+				</div><!-- gds-sidebar -->					
+				
+				<div class="right_holder">
+					<div class="content"> 
+
+    <%--content place holder starts here--%>
+    
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+            <p>
+                This site is only for editing .the site expertia</p>
+        
+        </asp:ContentPlaceHolder>
+    </div>
+   
+     <%--content place holder ends here--%>
+                    
+
+                        </div> <!--content div closed here-->
+                    </div><!-- right_holder -->
+			</div><!-- span-1 -->
+			<footer>
+				<div class="span-1 footer"> 
+					Copyright &copy; 2016 All Rights Reserved
+				</div><!-- span-1 -->
+			</footer>
+	</div><!-- wrapper -->
+	
+<script type="text/javascript" src="js/jquery.min.js"></script>	
+<!-- window height -->
+    <script>
+        var win_height = $(window).height();
+        var hdr_height = $('header').height();
+        var ftr_height = $('footer').height();
+        var hdr_and_ftr = parseInt(hdr_height) + parseInt(ftr_height);
+        var tot_height = eval(win_height - hdr_and_ftr);
+        $('.gds-sidebar').css('min-height', tot_height);
+	</script>
+<!-- window height -->	
+        </form>	
+</body>
+</html>
+
